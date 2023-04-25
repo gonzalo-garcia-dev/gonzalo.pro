@@ -1,0 +1,10 @@
+:root {
+    --rojo: #e50914;
+    --blanco: white;
+    --gris: #303030;
+    --gris-f: #757575;
+    --negro: black;
+    --tipo_titular: 'Karla', sans-serif;
+    --tipo_principal:'Inconsolata',
+        monospace;
+}
