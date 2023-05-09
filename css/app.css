@@ -1,16 +1,26 @@
-/* RESET CSS */
 :root {
-    --rojo: #e50914;
-    --blanco: white;
-    --gris: #303030;
-    --gris-f: #757575;
-    --negro: black;
-    --tipo_titular: 'Karla', sans-serif;
-    --tipo_principal: 'Inconsolata',
-        monospace;
+    --blanco: #e0e0e0;
+    --blanco-2: rgba(255, 255, 255, .2);
+    --negro: #181818;
+    --negro-5: rgba(0, 0, 0, 0.5);
+    --negro-7: rgba(0, 0, 0, 0.75);
+    --tipo_titular: 'Playfair Display',
+        serif;
+    --tipo_principal: 'Inter',
+        sans-serif;
 }
 
-/* Reseteamos los margin y paddings de todas las etiquetas */
+@media screen and (prefers-color-sheme:dark){
+:root {
+    --blanco: #181818;
+    --blanco-2: rgba(0, 0, 0, .2);
+    --negro: #e0e0e0;
+    --negro-5: rgba(255, 255, 255, 0.5);
+    --negro-7: rgba(255, 255, 255, 0.75);
+    }
+}
+
+/* RESET CSS */
 * {
     margin: 0;
     padding: 0;
@@ -20,62 +30,36 @@
     vertical-align: baseline;
 }
 
-/* Evitamos problemas con las imagenes */
-img,
-picture,
-video,
-iframe,
-figure {
+img,picture,video,iframe,figure {
     max-width: 100%;
     width: 100%;
     display: block;
-    /* opcional */
     -o-object-fit: cover;
     object-fit: cover;
-    /* opcional */
     -o-object-position: center center;
     object-position: center center;
 }
 
-/* Reseteamos los enlaces para funcionar como cajas... */
 a {
     display: block;
     text-decoration: none;
     color: inherit;
     font-size: inherit;
+    cursor: none;
 }
 
-/* ... excepto los que se encuentran en párrafos */
 p a {
     display: inline;
 }
 
-/* Quitamos los puntos de los <li> */
 li {
     list-style-type: none;
 }
 
-/* Configuramos anclas suaves */
 html {
     scroll-behavior: smooth;
 }
-
-/* Desactivamos estilos por defecto de las principales etiquetas de texto */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-a,
-strong,
-blockquote,
-i,
-b,
-u,
-em {
+h1,h2,h3,h4,h5,h6,p,span,a,strong,blockquote,i,b,u,em {
     font-size: 1em;
     font-weight: inherit;
     font-style: inherit;
@@ -83,7 +67,6 @@ em {
     color: inherit;
 }
 
-/* Evitamos problemas con los pseudoelementos de quotes */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -92,24 +75,12 @@ q:after {
     content: none;
 }
 
-/* Configuramos el texto que seleccionamos */
 ::-moz-selection {
     background-color: var(--negro);
     color: var(--blanco);
 }
 
-::selection {
-    background-color: var(--negro);
-    color: var(--blanco);
-}
-
-/* Nivelamos problemas de tipografías y colocación de formularios */
-form,
-input,
-textarea,
-select,
-button,
-label {
+form,input,textarea,select,button,label {
     font-family: inherit;
     font-size: inherit;
     -webkit-hyphens: auto;
@@ -118,48 +89,461 @@ label {
     background-color: transparent;
     color: inherit;
     display: block;
-    /* opcional */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
-
-/* Reseteamos las tablas */
-table,
-tr,
-td {
+table,tr,td {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-/* Evitamos problemas con los SVG */
 svg {
     width: 100%;
     display: block;
     fill: currentColor;
 }
 
-/* (Probándolo, no usar en producción) En el caso de añadir una  */
-/* p svg{
-  display: inline;
-  width: initial;
-} */
-/* Configuramos la tipografía para toda la web */
 body {
-    min-height: 100vh;
-    font-size: 100%;
     font-family: var(--tipo-principal);
-    color: var(--negro);
-    /* opcional */
-    line-height: 1.4em;
-    /* opcional */
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    /* opcional */
+    font-size: 100%;
+    min-height: 100vh;
+    background-color: var(--negro);
+    color: var(--blanco);
     font-smooth: always;
-    /* opcional */
     -webkit-font-smoothing: antialiased;
-    /* opcional */
     -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+}
+
+
+/* FIN DEL RESET */
+
+
+.circulos {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;    
+    filter: blur(80px);
+    animation: circulo1 30s linear infinite both;
+}
+
+.circulos .circulo {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    animation: circulo1 30s linear infinite both;
+}
+.circulos .circulo1 {
+    top:0%;
+    left:0%;
+}
+.circulos .circulo1 .path{
+    fill: #e63946;
+}
+.circulos .circulo2 {
+    top: 0%;
+    right: 0%;
+}
+.circulos .circulo2 .path {
+    fill: #f1faee;
+}
+.circulos .circulo3 {
+    bottom: 0%;
+    left: 0%;
+}
+.circulos .circulo3 .path {
+    fill: #a8dadc;
+}
+.circulos .circulo4 {
+    bottom: 0%;
+    right: 0%;
+}
+.circulos .circulo4 .path {
+    fill: #457b9d;
+}
+
+
+
+.header{
+    width: 100%;
+    min-height: 5em;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    padding: 1em 2em;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+
+
+}
+@media screen and (min-width: 330px) and (max-width: 680px) {
+    .header {
+        display: none;
+    }
+}
+.header .ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .li{
+    margin: 0 1em;
+}
+
+
+.main{
+    background: var(--negro-7);
+    margin: 0 0 1em ;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.seccion{
+    width: 100%;
+    min-height: 80vh;
+    padding: 2em;
+
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.seccion .info {
+    font-size: 1.2em;
+    animation: aparecer1 2s ease 1 both;
+}
+
+.seccion .ul{
+    /* background: red; */
+    margin: 2em 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.seccion .ul .li{
+    margin: 0 1em;
+}
+.seccion .ul .a{
+    border: 1px solid var(--blanco-2);
+    border-radius: 50%;
+
+    padding: 1em 1em 1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all .5s ease;
+    animation: aparecer1 2s ease 1 backwards;
+}
+
+.seccion .ul>:nth-child(2) .a{
+    animation-delay: 0.2s;
+}
+.seccion .ul .a:hover{
+border-color: var(--blanco);
+background: var(--blanco);
+color: var(--negro);
+}
+.seccion .h2{
+    font-family: var(--tipo_titular);
+    font-weight: 600;
+    font-size: 5em;
+    line-height: 1em;
+    color: var(--blanco);
+    mix-blend-mode: exclusion;
+}
+
+.seccion .h3{
+    font-family: var(--tipo_titular);
+    font-size: 3.5em;
+}
+
+
+.seccion .grid{
+    width: 90%;
+    max-width: 50em;
+    margin: 1em 0;
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.seccion .article{
+    width: 100%;
+    min-height: 20vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion .h4{
+    width: 100%;
+    height: 100%;
+    background-color: var(--negro-5);
+    backdrop-filter: blur(1rem);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    color:white ;
+    font-size: 1.8em;
+    font-family: var(--tipo_titular);
+    font-style: italic;
+
+    opacity: 0;
+    transform: translateZ(1) scale(1.2);
+    transition: all .5s ease;
+}
+.seccion .article:hover .h4{
+    opacity: 1;
+    transform: translateZ(1) scale(1);
+}
+.seccion .img {
+    border-radius: 1em;
+}
+.workTitleMobile{
+    display: none;
+}
+.works{
+    /* background-color: white; */
+    color: white;
+    /* box-shadow: 0 0 2em 5em white; */
+}
+.works .h2{
+    margin: 0 0 1rem;
+    color: inherit;
+}
+.works .p{
+    margin: 2rem;
+    color: inherit;
+    line-height: 2em;
+}
+
+.about .h2{
+    margin: 0 0 2rem;
+}
+.about .p{
+    max-width: 40rem;
+    margin: 0 0 2rem;
+    font-size: 1.1em;
+    text-align: left;
+}
+.aboutRow{
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+.aboutColumn{
+    margin: 1em;
+    padding: 1em;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.about .foto{
+
+    border-radius: 1em;
+}
+
+.contact .p{
+    margin: 2em;
+}
+.phone{
+    color:#3395d1;
+    margin: 0.5em;
+    font-size: 2.2rem;
+    font-family: var(--tipo-principal);
+}
+.contact .form {
+    background: var(--blanco-2);
+    width: 50%;
+    margin: 2em 0;
+    padding: 1em 0;
+    border-radius: 4%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact .input {
+    width: 80%;
+    margin: 1em;
+    padding: 1em;
+
+    border-bottom: 1px solid var(--blanco);
+}
+
+.contact .input::placeholder {
+    color: var(--blanco);
+    font-family: var(--tipo-principal);
+}
+
+.contact .textarea {
+    width: 80%;
+    margin: 1em;
+    padding: 1em;
+
+    border-bottom: 1px solid var(--blanco);
+}
+.contact .textarea::placeholder {
+    color: var(--blanco);
+    font-family: var(--tipo-principal);
+}
+
+.contact .send{
+    width: 50%;
+    font-size: 1.2em;
+    background-color: var(--blanco-2);
+    color: black;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+}
+.contact .rrss {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contact .li {
+    margin: 0 1em;
+}
+
+.contact .svg {
+    width: 3em;
+    height: 3em;
+}
+
+.footer{
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 2em 0;
+    text-align: center;
+    color: var(--blanco);
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+@keyframes circulo1 {
+    form {
+        transform: rotate(0deg) scale(2);
+    }
+
+    to {
+        transform: rotate(365deg) scale(3);
+
+    }
+}
+
+@keyframes aparecer1 {
+    from{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+#cursor{
+    width: 4em;
+    height: 4em;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+#cursor.mini{
+    transform: scale(0.7);
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 550px) {
+    #cursor{
+        display: none;
+    }
+    .seccion .ul .a {
+            margin: 0.2em 0;
+    }
+    .seccion .h2 {
+        font-size: 3em;
+    }
+    .seccion .h3 {
+        font-size: 1.5em;
+    }
+    .workTitleMobile {
+        display: block;
+    }
+    .aboutRow {
+        flex-direction: column;
+    }
+    .aboutColumn {
+        width: 100%;
+    }
+    .phone{
+        margin:0.1em ;
+    }
+    .contact .form{
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 550px) and (max-width: 1000px) {
+    #cursor {
+            display: none;
+        }
+    .seccion .ul .a {
+            margin: 0.2em 0;
+        }
+    .workTitleMobile {
+            display: block;
+    }
+    .aboutRow{
+        flex-direction: column;
+    }
+    .aboutColumn{
+        width: 100%;
+    }
+    .phone {
+        margin: 0.1em;
+    }
+    .contact .form {
+        width: 100%;
+    }
 }
