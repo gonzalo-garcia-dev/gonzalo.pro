@@ -7,8 +7,8 @@ $mensaje = $_POST['message'];
 
 // Construye el mensaje de correo electrónico
 $destinatario = 'contacto@gonzalo.pro';
-$asunto = $asunto;
-$mensaje_correo = "De: $nombre <$email>\r\n" .
+$asunto;
+$mensaje_correo = "Nombre: $nombre <$email>\r\n" .
 				  "Mensaje: $mensaje\r\n";
 
 // Envía el correo electrónico

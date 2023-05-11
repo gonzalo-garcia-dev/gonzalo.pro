@@ -2,6 +2,16 @@
 <html lang="es">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45QM0ER921"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-45QM0ER921');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gonzalo García | MERN Developer</title>
@@ -10,7 +20,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
+    <!-- css bootstrap -->
     <link rel="stylesheet" href="./css/app.css">
+    <!-- css mío -->
     <script defer src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
     <script defer src="./js/app.js"></script>
 
@@ -76,6 +88,10 @@
                         <a href="https://www.linkedin.com/in/gonzalo-garcia-dev/" class="a" title="LinkedIn"
                             target="_blank" rel="noopener noreferrer">Visita mi LinkedIn</a>
                     </li>
+                    <li class="li">
+                        <a href="./assets/documents/(ES) Gonzalo García CV.pdf" class="a" title="CV" target="_blank"
+                            rel="noopener noreferrer">Descarga mi CV</a>
+                    </li>
                 </ul>
             </section>
 
@@ -91,18 +107,18 @@
 
             <div class="grid">
                 <article class="article">
-                    <a class="a" href="https://github.com/gonzalo-garcia-dev/geofilm" title="Trabajo1">
+                    <a class="a" href="https://github.com/gonzalo-garcia-dev/geofilm" title="Geofilm">
                         <figure class="figure">
-                            <img src="./assets/images/cine.jpg" alt="Imagen" class="img" loading="lazy">
+                            <img src="./assets/images/cine.webp" alt="Imagen" class="img" loading="lazy">
                         </figure>
                         <h4 class="h4">📽️Geofilm</h4>
                     </a>
                     <h4 class="workTitleMobile">📽️Geofilm</h4>
                 </article>
                 <article class="article">
-                    <a class="a" href="https://github.com/gonzalo-garcia-dev/BDT-client" title="Trabajo1">
+                    <a class="a" href="https://github.com/gonzalo-garcia-dev/BDT-client" title="Timeshare">
                         <figure class="figure">
-                            <img src="./assets/images/reloj.jpg" alt="Imagen" class="img" loading="lazy">
+                            <img src="./assets/images/reloj.webp" alt="Imagen" class="img" loading="lazy">
                         </figure>
                         <h4 class="workTitleMobile">⏳Timeshare</h4>
 
@@ -118,7 +134,7 @@
 
             <article class="aboutRow">
                 <div class="aboutColumn">
-                    <img src="./assets/images/Gonzalo García.JPG" alt="Gonzalo García" class="foto">
+                    <img src="./assets/images/Gonzalo García.jpg" alt="Gonzalo García" class="foto">
                 </div>
                 <div class="aboutColumn">
 
@@ -164,19 +180,19 @@
             <p class="p">...y si no, siempre puedes usar éste formulario tan chulo que me he currado para enviarme un
                 e-mail:</p>
 
+            <!-- FORMULARIO -->
             <form class="form" id="contact-form" name="contact-form" action="./php/enviar.php" method="POST">
                 <input class="input" type="text" id="name" name="name" placeholder="Tu nombre" required>
                 <input class="input" type="text" id="email" name="email" placeholder="Tu e-mail" required>
                 <input class="input" type="text" id="subject" name="subject" placeholder="Asunto" required>
-                <textarea class="textarea" name="" id="" cols="30" rows="10"
+                <textarea class="textarea" name="message" id="message" cols="30" rows="10"
                     placeholder="¿Adivinas?... ¡aquí va tu mensaje! 🙂" required></textarea>
                 <!-- <input class="input send" type="button" id="send" name="send" value="Enviar" onclick="
                             document.getElementById('contact-form').submit();">
                         -->
-
-                <a class="input send" onclick="
-                            document.getElementById('contact-form').submit();">Enviar</a>
+                <a class="input send" onclick="document.getElementById('contact-form').submit();">Enviar</a>
             </form>
+
 
             <ul class="rrss">
                 <li class="li">
@@ -200,12 +216,8 @@
                     </a>
                 </li>
             </ul>
-
         </section>
-
-
     </main>
-
 
     <footer class="footer">
 
