@@ -142,28 +142,28 @@ body {
     left:0%;
 }
 .circulos .circulo1 .path{
-    fill: #e63946;
+    fill:#011b40;
 }
 .circulos .circulo2 {
     top: 0%;
     right: 0%;
 }
 .circulos .circulo2 .path {
-    fill: #f1faee;
+    fill: #0180ff;
 }
 .circulos .circulo3 {
     bottom: 0%;
     left: 0%;
 }
 .circulos .circulo3 .path {
-    fill: #a8dadc;
+    fill: #01dcf2;
 }
 .circulos .circulo4 {
     bottom: 0%;
     right: 0%;
 }
 .circulos .circulo4 .path {
-    fill: #457b9d;
+    fill: #00abfe;
 }
 
 
