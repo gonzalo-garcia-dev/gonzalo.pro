@@ -190,6 +190,9 @@ body {
         display: none;
     }
 }
+.header .favicon{
+    max-width: 40px;
+}
 .header .ul{
     display: flex;
     flex-flow: row wrap;
